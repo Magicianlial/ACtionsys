@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>top</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+
+
+<!-- <%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%> -->
+<style type="text/css">
+
+
+
+
+</style>
+</head>
+
+
+
+
+<body>
+<div class="allBox">
+    <div class="video_left">
+      <div class="right_up01">
+        <div class="right_up">
+            <p><input type="text" placeholder="输入名称或编号" class="input_video"/> </p>
+            <table width=100% border="0" id = "mytable">
+              <tr>
+               <th align="left">时间</th>
+               <th align="right">行为</th>
+              </tr>
+              <tr>
+               <td align="left">2021.5.10 12:40</td>
+               <td align="right">play</td>
+              </tr>
+              <tr>
+               <td align="left">2021.5.11 13:44</td>
+               <td align="right">cross</td>
+              </tr>
+              <tr>
+                <td align="left">2021.5.12 12:44</td>
+                <td align="right">drive</td>
+               </tr>
+               <tr>
+                <td align="left">2021.5.12 16:44</td>
+                <td align="right">leap</td>
+               </tr>
+               <tr>
+                <td align="left">2021.5.13 13:44</td>
+                <td align="right">leap</td>
+               </tr>
+               <tr>
+                <td align="left">2021.5.14 11:34</td>
+                <td align="right">walk</td>
+               </tr>
+               <tr>
+                <td align="left">2021.5.15 17:44</td>
+                <td align="right">go upstairs</td>
+               </tr>
+              <tr>
+               <td align="left">2021.5.16 14:21</td>
+               <td align="right">walk</td>
+              </tr>
+              <tr>
+               <td align="left">2021.5.17 16:40</td>
+               <td align="right">walk</td>
+              </tr>
+             </table>
+        </div>
+      </div>
+    </div>        
+        <!-- <div class="right_up01">
+            <div class="right_up">
+
+                <p><input type="text" placeholder="输入名称或编号" class="input_video"/> </p>
+                <div class="right_tree"> <ul id="tree" class="ztree"   ></ul></div>
+            </div>
+
+        </div>
+        <div class="right_control">
+            <div class="control01">
+                <input type="button" value="识别监控" class="but3" id="contb1"/> 
+                <input type="button" value="警报处理" class="but01" id="contb2"/> 
+                <input type="button" value="系统开关" class="but01" id="contb3"/>
+            </div>
+            <div class="control02" id="contr1"> 
+	            <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
+	            <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
+	            <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
+	            <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
+	            <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
+	            <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
+            	<div class="menu_left_switch">
+			<div class="switch_label">
+				系统开关
+			</div>
+			<div class="toggle-button-wrapper">
+			    <input type="checkbox" id="toggle-button1" class="toggle-button" name="SYSswitch" onchange="ConnectBotton()">
+			    <label for="toggle-button1" class="button-label" >
+			        <span class="circle"></span>
+			        <span class="text on">ON</span>
+			        <span class="text off">OFF</span>
+			    </label>
+			</div>
+		</div>
+            
+            </div>
+            <div class="control02" id="contr2" style="display :none;"> 
+	            
+	            <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
+	            <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
+	            <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
+            
+            
+            </div>
+            <div class="control02" id="contr3" style="display :none;"> 
+	            <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
+	            <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
+	            <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
+	            <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
+	            
+            
+            </div>
+        	
+        </div> -->
+    <div class="video_right">
+        <div class="video_contest"  >
+            
+            <video  controls preload="none" style="object-fit: fill; width: 100%; height: 100%"  data-setup="{}" autoplay>
+                <source src="F:\gpj\工作\前端\视频素材\1.mp4" type='video/mp4' />
+            </video>
+        </div>  
+    </div>
+</div>
+
+
+<script src="../js/jquery.js" ></script>
+<script src="../js/jquery.ztree.core-3.5.js" ></script>
+<script src="../js/jquery.ztree.excheck-3.5.js" ></script>
+<script src="../js/ztree_d.js" ></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $("#contb1").click(function(){
+	  
+
+  	$("#contr1").show();
+  	$("#contr2").hide();
+  	$("#contr3").hide();
+  	$("#contb1").attr("class","but3");
+  	$("#contb2").attr("class","but01");
+  	$("#contb3").attr("class","but01");
+
+  });
+  $("#contb2").click(function(){
+	  
+
+	  	$("#contr2").show();
+	  	$("#contr1").hide();
+	  	$("#contr3").hide();
+	  	$("#contb1").attr("class","but01");
+	  	$("#contb2").attr("class","but3");
+	  	$("#contb3").attr("class","but01");
+
+	  });
+  $("#contb3").click(function(){
+	  
+
+	  	$("#contr3").show();
+	  	$("#contr1").hide();
+	  	$("#contr2").hide();
+	  	$("#contb1").attr("class","but01");
+	  	$("#contb2").attr("class","but01");
+	  	$("#contb3").attr("class","but3");
+
+	  });
+  
+
+});
+var path = request.getContextPath();
+var basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+function ConnectBotton() {
+	if($("#toggle-button1").is(':checked')==true){
+		$.ajax({
+		       type:"POST",
+		       url:"<%=basePath%>"+"connectServlet",
+		       data: { state: "on" },
+		       statusCode: {404: function() {
+		           alert('page not found'); }
+		       },    
+		       success:function(json){
+		    	 //  $("#sp").html(json);
+		 	       }
+		       });
+	}else{
+		$.ajax({
+		       type:"POST",
+		       url:"<%=basePath%>"+"connectServlet",
+		       data: { state: "off" },
+		       statusCode: {404: function() {
+		           alert('page not found'); }
+		       },    
+		       success:function(json){
+		    	 //  $("#sp").html(json);
+		 	       }
+		       });
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+
+{"data":
+[{"check":"","id":"SBNVG023","type":"Special type","rescue":"true","time":"2019-8-1","reason":"行走","area":"A"},
+ {"check":"","id":"SBNVG035","type":"Special type","rescue":"true","time":"2019-8-1","reason":"行走","area":"A"},
+{"check":"","id":"SBNVG037","type":"Special type","rescue":"false","time":"2019-8-1","reason":"行走","area":"A"},
+{"check":"","id":"SBNVG023","type":"Special type","rescue":"true","time":"2019-8-1","reason":"行走","area":"A"},
+ {"check":"","id":"SBNVG035","type":"Special type","rescue":"true","time":"2019-8-2","reason":"行走","area":"A"},
+{"check":"","id":"SBNVG037","type":"Special type","rescue":"false","time":"2019-8-2","reason":"行走","area":"A"},
+{"check":"","id":"SBNVG023","type":"Special type","rescue":"true","time":"2019-8-2","reason":"行走","area":"A"},
+ {"check":"","id":"SBNVG035","type":"Special type","rescue":"true","time":"2019-8-2","reason":"行走" ,"area":"A"},
+{"check":"","id":"SBNVG037","type":"Special type","rescue":"false","time":"2019-8-2","reason":"行走","area":"A"}
+
+]}
