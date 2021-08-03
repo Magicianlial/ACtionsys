@@ -12,11 +12,25 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %> -->
 <style type="text/css">
-
-
-
-
+    #le1{
+				color: white;
+            }
+            #le2{
+				color: white;
+            }
+            #le3{
+				color: white;
+            }
+            #le4{
+				color: white;
+            }
+            #le5{
+				color: white;
+            }
 </style>
+
+<script src="../ezuikit.js"></script>
+<script src="../js/jquery.min.js"></script>
 </head>
 
 
@@ -27,49 +41,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="video_left">
       <div class="right_up01">
         <div class="right_up">
-            <p><input type="text" placeholder="输入名称或编号" class="input_video"/> </p>
+            <p><input type="text" placeholder="" class="input_video"/> </p>
             <table width=100% border="0" id = "mytable">
               <tr>
-               <th align="left">时间</th>
-               <th align="right">行为</th>
+               <th align="left">Time</th>
+               <th align="right">Behavior</th>
               </tr>
-              <tr>
-               <td align="left">2021.5.10 12:40</td>
+              <!-- <tr>
+               <td align="left" ></td>
                <td align="right">play</td>
-              </tr>
-              <tr>
-               <td align="left">2021.5.11 13:44</td>
-               <td align="right">cross</td>
-              </tr>
-              <tr>
-                <td align="left">2021.5.12 12:44</td>
-                <td align="right">drive</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.12 16:44</td>
-                <td align="right">leap</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.13 13:44</td>
-                <td align="right">leap</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.14 11:34</td>
-                <td align="right">walk</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.15 17:44</td>
-                <td align="right">go upstairs</td>
-               </tr>
-              <tr>
-               <td align="left">2021.5.16 14:21</td>
-               <td align="right">walk</td>
-              </tr>
-              <tr>
-               <td align="left">2021.5.17 16:40</td>
-               <td align="right">walk</td>
-              </tr>
+              </tr> -->
              </table>
+             <div id="le1" ></div>
+             <div id="le2" ></div>
+             <div id="le3" ></div>
+             <div id="le4" ></div>
+             <div id="le5" ></div>
+             <!-- <div id="le2"></div> -->
         </div>
       </div>
     </div>        
@@ -134,9 +122,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div> -->
     <div class="video_right">
         <div class="video_contest"  >
-            
+          <!-- <iframe id="ifr" src="http://10.37.35.228:5050/" frameborder="0" width="100%" height="100%"></iframe> -->
             <video  controls preload="none" style="object-fit: fill; width: 100%; height: 100%"  data-setup="{}" autoplay>
-                <source src="F:\gpj\工作\前端\视频素材\1.mp4" type='video/mp4' />
+                <source src="F:\edius\jz.mp4" type='video/mp4' />
             </video>
         </div>  
     </div>
@@ -148,6 +136,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="../js/jquery.ztree.excheck-3.5.js" ></script>
 <script src="../js/ztree_d.js" ></script>
 <script type="text/javascript">
+
+
+var num1 =  '2021.06.14 11:13' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Action Start';    //先建立全局变量，当网站打开时归0
+			var Interval = setInterval(function()  //写一个定时函数，每过多久执行一次，如果是时间，可以让执行时间为1000ms
+			{
+				//num;     //定时器每执行一次，让num+1
+				var la = document.getElementById("le1");    //选中div
+				la.innerText = num1;　　　　//让div中的文本变成num，由于num不断变化，div中的文本也不断变化
+			},500);  //设置定时器的时间
+            var num2 =  '2021.06.14 11:13' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Weight Lifting';    //先建立全局变量，当网站打开时归0
+			var Interval = setInterval(function()  //写一个定时函数，每过多久执行一次，如果是时间，可以让执行时间为1000ms
+			{
+				//num;     //定时器每执行一次，让num+1
+				var la = document.getElementById("le2");    //选中div
+				la.innerText = num2;　　　　//让div中的文本变成num，由于num不断变化，div中的文本也不断变化
+			},5000);  //设置定时器的时间 
+            var num3 =  '2021.06.14 11:13' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Weight Lifting';    //先建立全局变量，当网站打开时归0
+			var Interval = setInterval(function()  //写一个定时函数，每过多久执行一次，如果是时间，可以让执行时间为1000ms
+			{
+				//num;     //定时器每执行一次，让num+1
+				var la = document.getElementById("le3");    //选中div
+				la.innerText = num3;　　　　//让div中的文本变成num，由于num不断变化，div中的文本也不断变化
+			},6000);  //设置定时器的时间
+            var num4 =  '2021.06.14 11:13' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Weight Lifting';    //先建立全局变量，当网站打开时归0
+			var Interval = setInterval(function()  //写一个定时函数，每过多久执行一次，如果是时间，可以让执行时间为1000ms
+			{
+				//num;     //定时器每执行一次，让num+1
+				var la = document.getElementById("le4");    //选中div
+				la.innerText = num4;　　　　//让div中的文本变成num，由于num不断变化，div中的文本也不断变化
+			},7000);  //设置定时器的时间 
+            var num5 =  '2021.06.14 11:13' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'Weight Lifting';    //先建立全局变量，当网站打开时归0
+			var Interval = setInterval(function()  //写一个定时函数，每过多久执行一次，如果是时间，可以让执行时间为1000ms
+			{
+				//num;     //定时器每执行一次，让num+1
+				var la = document.getElementById("le5");    //选中div
+				la.innerText = num4;　　　　//让div中的文本变成num，由于num不断变化，div中的文本也不断变化
+			},8000);  //设置定时器的时间          
+
 
 $(document).ready(function(){
 
@@ -187,6 +213,7 @@ $(document).ready(function(){
   
 
 });
+
 var path = request.getContextPath();
 var basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 function ConnectBotton() {
