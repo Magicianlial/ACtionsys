@@ -27,7 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="video_left">
       <div class="right_up01">
         <div class="right_up">
-            <p><input type="text" placeholder="" class="input_video"/> </p>
+            <p><input type="text" placeholder="关键字" class="input_video"/></p>
+            <div class="right_tree"> <ul id="tree" class="ztree"   ></ul></div>
             <!-- <table width=100% border="0" id = "mytable">
               <tr>
                <th align="left">时间</th>
@@ -72,66 +73,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              </table> -->
         </div>
       </div>
-    </div>        
-        <!-- <div class="right_up01">
-            <div class="right_up">
-
-                <p><input type="text" placeholder="输入名称或编号" class="input_video"/> </p>
-                <div class="right_tree"> <ul id="tree" class="ztree"   ></ul></div>
-            </div>
-
+      <div class="right_control">
+        <div class="control01">
+            <input type="button" value="识别监控" class="but3" id="contb1"/> 
+            <input type="button" value="警报处理" class="but01" id="contb2"/> 
+            <input type="button" value="系统开关" class="but01" id="contb3"/>
         </div>
-        <div class="right_control">
-            <div class="control01">
-                <input type="button" value="识别监控" class="but3" id="contb1"/> 
-                <input type="button" value="警报处理" class="but01" id="contb2"/> 
-                <input type="button" value="系统开关" class="but01" id="contb3"/>
-            </div>
-            <div class="control02" id="contr1"> 
-	            <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
-	            <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
-	            <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
-	            <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
-	            <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
-	            <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
-            	<div class="menu_left_switch">
-			<div class="switch_label">
-				系统开关
-			</div>
-			<div class="toggle-button-wrapper">
-			    <input type="checkbox" id="toggle-button1" class="toggle-button" name="SYSswitch" onchange="ConnectBotton()">
-			    <label for="toggle-button1" class="button-label" >
-			        <span class="circle"></span>
-			        <span class="text on">ON</span>
-			        <span class="text off">OFF</span>
-			    </label>
-			</div>
-		</div>
-            
-            </div>
-            <div class="control02" id="contr2" style="display :none;"> 
-	            
-	            <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
-	            <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
-	            <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
-            
-            
-            </div>
-            <div class="control02" id="contr3" style="display :none;"> 
-	            <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
-	            <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
-	            <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
-	            <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
-	            
-            
-            </div>
-        	
-        </div> -->
+        <div class="control02" id="contr1"> 
+          <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
+          <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
+          <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
+          <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
+          <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
+          <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
+          <div class="menu_left_switch">
+  <div class="switch_label">
+    系统开关
+  </div>
+  <div class="toggle-button-wrapper">
+      <input type="checkbox" id="toggle-button1" class="toggle-button" name="SYSswitch" onchange="ConnectBotton()">
+      <label for="toggle-button1" class="button-label" >
+          <span class="circle"></span>
+          <span class="text on">ON</span>
+          <span class="text off">OFF</span>
+      </label>
+  </div>
+</div>
+        
+        </div>
+        <div class="control02" id="contr2" style="display :none;"> 
+          
+          <label class="label_width">监控5：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控6：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控7：</label><label class="label_width">FrontCrawl</label><br/>
+          <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
+          <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
+        
+        
+        </div>
+        <div class="control02" id="contr3" style="display :none;"> 
+          <label class="label_width">监控1：</label><label class="label_width">Basketball</label><br/>
+          <label class="label_width">监控2：</label><label class="label_width">Basketball</label><br/>
+          <label class="label_width">监控3：</label><label class="label_width">Biking</label><br/>
+          <label class="label_width">监控4：</label><label class="label_width">Biking</label><br/>
+          
+        
+        </div>
+      
+      </div>
+    </div>        
+         
     <div class="video_right">
         <div class="video_con"  >
             
