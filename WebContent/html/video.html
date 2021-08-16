@@ -228,33 +228,33 @@ $(document).ready(function(){
 });
 var path = request.getContextPath();
 var basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-function ConnectBotton() {
-	if($("#toggle-button1").is(':checked')==true){
-		$.ajax({
-		       type:"POST",
-		       url:"<%=basePath%>"+"connectServlet",
-		       data: { state: "on" },
-		       statusCode: {404: function() {
-		           alert('page not found'); }
-		       },    
-		       success:function(json){
-		    	 //  $("#sp").html(json);
-		 	       }
-		       });
-	}else{
-		$.ajax({
-		       type:"POST",
-		       url:"<%=basePath%>"+"connectServlet",
-		       data: { state: "off" },
-		       statusCode: {404: function() {
-		           alert('page not found'); }
-		       },    
-		       success:function(json){
-		    	 //  $("#sp").html(json);
-		 	       }
-		       });
-	}
-}
+// function ConnectBotton() {
+// 	if($("#toggle-button1").is(':checked')==true){
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "on" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}else{
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "off" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}
+// }
 </script>
 </body>
 </html>
