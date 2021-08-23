@@ -5,7 +5,10 @@
 <title>top</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <link href="../css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
-
+<link href="../css/layui.css" rel="stylesheet" type="text/css" />
+<script src="../js/layui.js"></script> 
+<script src="../js/main.js"></script>
+</script>
 
 <!-- <%
 String path = request.getContextPath();
@@ -28,49 +31,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="right_up01">
         <div class="right_up">
             <p><input type="text" placeholder="关键字" class="input_video"/></p>
-            <div class="right_tree"> <ul id="tree" class="ztree"   ></ul></div>
-            <!-- <table width=100% border="0" id = "mytable">
-              <tr>
-               <th align="left">时间</th>
-               <th align="right">行为</th>
-              </tr>
-              <tr>
-               <td align="left">2021.5.10 12:40</td>
-               <td align="right">play</td>
-              </tr>
-              <tr>
-               <td align="left">2021.5.11 13:44</td>
-               <td align="right">cross</td>
-              </tr>
-              <tr>
-                <td align="left">2021.5.12 12:44</td>
-                <td align="right">drive</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.12 16:44</td>
-                <td align="right">leap</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.13 13:44</td>
-                <td align="right">leap</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.14 11:34</td>
-                <td align="right">walk</td>
-               </tr>
-               <tr>
-                <td align="left">2021.5.15 17:44</td>
-                <td align="right">go upstairs</td>
-               </tr>
-              <tr>
-               <td align="left">2021.5.16 14:21</td>
-               <td align="right">walk</td>
-              </tr>
-              <tr>
-               <td align="left">2021.5.17 16:40</td>
-               <td align="right">walk</td>
-              </tr>
-             </table> -->
+            <div class="right_tree"> <ul id="tree" class="ztree"  ></ul></div>
+            <div class="layui-panel">
+              <ul class="layui-menu" id="docDemoMenu1">
+                <li class="layui-menu-item-divider"></li>
+                <li class="layui-menu-item-group layui-menu-item-down" lay-options="{type: 'group'}">
+                  <div class="layui-menu-body-title">
+                    所有区域 <i class="layui-icon layui-icon-up"></i>
+                  </div>
+                  <ul>
+                    <li lay-options="{id: 1031}">区域1</li>
+                    <li lay-options="{id: 1032}">
+                      <div class="layui-menu-body-title">区域2</div>
+                    </li>
+                    <li lay-options="{id: 1033}">区域3</li>
+                    <li lay-options="{id: 1034}">区域4</li>
+                    <li lay-options="{id: 1035}">区域5</li>
+                  </ul>
+                </li>
+                </li>
+              </ul>
+            </div>
         </div>
       </div>
       <div class="right_control">
@@ -90,18 +71,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <label class="label_width">监控8：</label><label class="label_width">WalkingWithDog</label><br/>
           <label class="label_width">监控9：</label><label class="label_width">WalkingWithDog</label><br/>
           <div class="menu_left_switch">
-  <div class="switch_label">
-    系统开关
-  </div>
-  <div class="toggle-button-wrapper">
-      <input type="checkbox" id="toggle-button1" class="toggle-button" name="SYSswitch" onchange="ConnectBotton()">
-      <label for="toggle-button1" class="button-label" >
-          <span class="circle"></span>
-          <span class="text on">ON</span>
-          <span class="text off">OFF</span>
-      </label>
-  </div>
-</div>
+            <div class="switch_label">
+              系统开关
+            </div>
+            <div class="toggle-button-wrapper">
+              <input type="checkbox" id="toggle-button1" class="toggle-button" name="SYSswitch" onchange="ConnectBotton()">
+              <label for="toggle-button1" class="button-label" >
+                  <span class="circle"></span>
+                  <span class="text on">ON</span>
+                  <span class="text off">OFF</span>
+              </label>
+            </div>
+          </div>
         
         </div>
         <div class="control02" id="contr2" style="display :none;"> 
