@@ -1,12 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>top</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
-
-
-
+<link href="../css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<link href="../css/layui.css" rel="stylesheet" type="text/css" />
+<script src="../js/layui.js"></script> 
+<script src="../js/main.js"></script>
+</script>
 
 
 <style type="text/css">
@@ -17,15 +19,120 @@
 </style>
 </head>
 
-<body >
-<div class="map">
-    <div class="map_tool">
 
+
+
+<body>
+<div class="allBox">
+    <div class="video_left">
+      <div class="right_up01_map">
+        <div class="right_up">
+            <p><input type="text" placeholder="关键字" class="input_video"/></p>
+            <div class="right_tree"> <ul id="tree" class="ztree"  ></ul></div>
+            <div class="layui-panel">
+              <ul class="layui-menu" id="docDemoMenu1">
+                <li class="layui-menu-item-divider"></li>
+                <li class="layui-menu-item-group layui-menu-item-down" lay-options="{type: 'group'}">
+                  <div class="layui-menu-body-title">
+                    所有区域 <i class="layui-icon layui-icon-up"></i>
+                  </div>
+                  <ul>
+                    <li lay-options="{id: 1031}">区域1</li>
+                    <li lay-options="{id: 1032}">
+                      <div class="layui-menu-body-title">区域2</div>
+                    </li>
+                    <li lay-options="{id: 1033}">区域3</li>
+                    <li lay-options="{id: 1034}">区域4</li>
+                    <li lay-options="{id: 1035}">区域5</li>
+                  </ul>
+                </li>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      
+    </div>        
+         
+    <div class="video_right">
+        <p><img src="../img/jmap.png"  /></p>
     </div>
 </div>
 
 
 <script src="../js/jquery.js" ></script>
+<script src="../js/jquery.ztree.core-3.5.js" ></script>
+<script src="../js/jquery.ztree.excheck-3.5.js" ></script>
+<script src="../js/ztree_d.js" ></script>
+<script type="text/javascript">
 
+$(document).ready(function(){
+
+  $("#contb1").click(function(){
+	  
+
+  	$("#contr1").show();
+  	$("#contr2").hide();
+  	$("#contr3").hide();
+  	$("#contb1").attr("class","but3");
+  	$("#contb2").attr("class","but01");
+  	$("#contb3").attr("class","but01");
+
+  });
+  $("#contb2").click(function(){
+	  
+
+	  	$("#contr2").show();
+	  	$("#contr1").hide();
+	  	$("#contr3").hide();
+	  	$("#contb1").attr("class","but01");
+	  	$("#contb2").attr("class","but3");
+	  	$("#contb3").attr("class","but01");
+
+	  });
+  $("#contb3").click(function(){
+	  
+
+	  	$("#contr3").show();
+	  	$("#contr1").hide();
+	  	$("#contr2").hide();
+	  	$("#contb1").attr("class","but01");
+	  	$("#contb2").attr("class","but01");
+	  	$("#contb3").attr("class","but3");
+
+	  });
+  
+
+});
+var path = request.getContextPath();
+var basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+// function ConnectBotton() {
+// 	if($("#toggle-button1").is(':checked')==true){
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "on" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}else{
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "off" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}
+// }
+</script>
 </body>
 </html>
