@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>top</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<link href="../css/layui.css" rel="stylesheet" type="text/css" />
+<script src="../js/layui.js"></script> 
+<script src="../js/main.js"></script>
+<script src="../js/echarts.min.js"></script>
+</script>
+
+
+<style type="text/css">
+
+body {
+  background-color: #ffffff;
+}
+
+
+</style>
+</head>
+
+
+
+
+
+<body>
+
+   <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+   <div class = "row" style="height: 400px; width: 100%;margin-top:20px;">
+    <div id="1" style="width: 33%;height:100%;float: left;"></div>
+    <div id="2" style="width: 33%;height:100%;float: left;"></div>
+    <div id="3" style="width: 33%;height:100%;float: left;"></div>
+  </div>
+  <div class = "row" style="height: 400px; width: 100%;margin-top:20px;">
+    <div id="4" style="width: 33%;height:100%;float: left;"></div>
+    <div id="5" style="width: 33%;height:100%;float: left;"></div>
+    <div id="6" style="width: 33%;height:100%;float: left;"></div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('1'));
+
+      // 指定图表的配置项和数据
+      var option = {
+          title: {
+              text: 'ECharts'
+          },
+          tooltip: {},
+          legend: {
+              data:['销量']
+          },
+          xAxis: {
+              data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+          },
+          yAxis: {},
+          series: [{
+              name: '销量',
+              type: 'bar',
+              data: [5, 20, 36, 10, 10, 20]
+          }]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+  </script>
+
+  <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('2'));
+
+      myChart.setOption({
+          series : [
+              {
+                  name: '访问来源',
+                  type: 'pie',    // 设置图表类型为饼图
+                  radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                  data:[          // 数据数组，name 为数据项名称，value 为数据项值
+                      {value:235, name:'视频广告'},
+                      {value:274, name:'联盟广告'},
+                      {value:310, name:'邮件营销'},
+                      {value:335, name:'直接访问'},
+                      {value:400, name:'搜索引擎'}
+                  ]
+              }
+          ]
+      })
+  </script>
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('3'));
+    // 指定图表的配置项和数据
+    var option = {
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'value'
+            },
+            dataZoom: [
+                {   // 这个dataZoom组件，默认控制x轴。
+                    type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+                    start: 10,      // 左边在 10% 的位置。
+                    end: 60         // 右边在 60% 的位置。
+                }
+            ],
+            series: [
+                {
+                    type: 'scatter', // 这是个『散点图』
+                    itemStyle: {
+                        opacity: 0.8
+                    },
+                    symbolSize: function (val) {
+                        return val[2] * 40;
+                    },
+                    data: [["14.616","7.241","0.896"],["3.958","5.701","0.955"],["2.768","8.971","0.669"],["9.051","9.710","0.171"],["14.046","4.182","0.536"],["12.295","1.429","0.962"],["4.417","8.167","0.113"],["0.492","4.771","0.785"],["7.632","2.605","0.645"],["14.242","5.042","0.368"]]
+                }
+            ]
+        }
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+
+  <script type="text/javascript">
+    var base = +new Date(2021, 4, 3);
+  var oneDay = 24 * 3600 * 1000;
+  var date = [];
+
+  var data = [Math.random() * 150];
+  var now = new Date(base);
+
+  function addData(shift) {
+    now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
+    date.push(now);
+    data.push((Math.random() - 0.4) * 10 + data[data.length - 1]);
+
+    if (shift) {
+        date.shift();
+        data.shift();
+    }
+
+    now = new Date(+new Date(now) + oneDay);
+  }
+
+  for (var i = 1; i < 100; i++) {
+    addData();
+  }
+
+  option = {
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: date
+    },
+    yAxis: {
+        boundaryGap: [0, '50%'],
+        type: 'value'
+    },
+    series: [
+        {
+            name:'成交',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            stack: 'a',
+            areaStyle: {
+                normal: {}
+            },
+            data: data
+        }
+    ]
+  };
+
+  setInterval(function () {
+    addData(true);
+    myChart.setOption({
+        xAxis: {
+            data: date
+        },
+        series: [{
+            name:'成交',
+            data: data
+        }]
+    });
+  }, 500);
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('4'));
+    myChart.setOption(option)
+  </script>
+
+
+<script src="../js/jquery.js" ></script>
+<script src="../js/jquery.ztree.core-3.5.js" ></script>
+<script src="../js/jquery.ztree.excheck-3.5.js" ></script>
+<script src="../js/ztree_d.js" ></script>
+<script type="text/javascript">
+
+var path = request.getContextPath();
+var basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+// function ConnectBotton() {
+// 	if($("#toggle-button1").is(':checked')==true){
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "on" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}else{
+// 		$.ajax({
+// 		       type:"POST",
+// 		       url:"<%=basePath%>"+"connectServlet",
+// 		       data: { state: "off" },
+// 		       statusCode: {404: function() {
+// 		           alert('page not found'); }
+// 		       },    
+// 		       success:function(json){
+// 		    	 //  $("#sp").html(json);
+// 		 	       }
+// 		       });
+// 	}
+// }
+</script>
+</body>
+</html>
